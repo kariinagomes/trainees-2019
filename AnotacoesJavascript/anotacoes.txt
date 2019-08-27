@@ -1,0 +1,318 @@
+import "./styles.css";
+
+document.getElementById("app").innerHTML = `
+<h1>Hello Vanilla!</h1>
+<div>
+  We use Parcel to bundle this sandbox, you can find more info about Parcel
+  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
+</div>
+`;
+
+console.log('abc');
+
+var linguagens = 'Javascript'
+
+console.log(linguagens)
+
+var linguagens = 444;
+
+console.log(linguagens);
+
+let alo = "hauihdaiuhd"
+alo = 23232424
+
+const constante = "aqui eh uma constante"
+console.log(constante)
+
+const aloho = function () {
+
+}
+
+const alo2 = 10
+
+let pessoa = {
+  nome: ''
+}
+
+
+let tipo = {
+  nome: ''
+}
+tipo.nome = 'iahiuahsah'
+tipo.funcao = function () {
+  console.log('eu sou uma funcao')
+}
+tipo.funcao();
+
+let ator1 = 'brad pitt'
+console.log(typeof ator1);
+
+let qqcoisa = [1, 2, 3]
+
+//o typeof nao identifica array
+console.log(typeof qqcoisa)
+//por isso é bom verificar assim:
+console.log(Array.isArray(qqcoisa))
+
+//acessar item
+console.log(qqcoisa[0])
+
+
+let qqcoisa2 = [{ name: 'jaqueline' }, 2]
+qqcoisa2[0].name = 5
+console.log(qqcoisa2[0].name)
+
+//verificar se um objeto existe: (CONFIRMEM SE É ISSO MSM RISOS)
+//array.hasOwnProperty
+
+let ator = {
+  name: 'Brad',
+  age: 50
+}
+
+let filmes = [
+  {
+    name: 'Avengers',
+    ano: 2019,
+    atores: ['Brad', 'Scarlett']
+  }
+]
+
+filmes[0].atores = ator;
+
+let soma = 1 + 2
+console.log(soma);
+
+console.log(10 - 1);
+console.log(10 / 2);
+console.log(10 % 2 === 0);
+
+console.log('Jaqueline' + ' ' + 'Kirino');
+
+let numero = 2
+let numero2 = 3
+let numero3 = '1'
+console.log(numero + numero3) //concatena
+console.log(numero + numero3 + numero2) //concatena
+console.log(numero + numero2 + numero3) //soma primeiro, dps concatena (segue ordem)
+
+//javascript sempre considera da esquerda pra direita;
+
+let nome = 'Maria'
+let sobrenome = 'Silva'
+
+// TEMPLATE LITERAIS
+let nomeSobrenome = `Sr(a) ${nome} ${1 + 2}`
+
+console.log(nomeSobrenome);
+
+let array2 = [1 - 2];
+let array3 = [3, 4];
+
+console.log(array2.concat(array3));
+
+// CONDICIONAIS:
+
+const info = {
+  name: 'Joao',
+  age: 30, 
+  isActive: true
+}
+
+// só o fato de ter alguma informação ele retorna verdadeiro
+//result: true
+if(info.name) {
+  console.log('ok')
+} else {
+  console.log('nok')
+}
+
+//result: false
+if(info.abacaxi) {
+  console.log('ok')
+} else {
+  console.log('nok!!!')
+}
+
+//result: ok (pq converteu)
+if(info.age >= '30') {
+  console.log('ok')
+} else {
+  console.log('nok!!!')
+}
+
+//result: true (nem leu o age pq foi usado "ou" e a primeira condição é verdadeira)
+if(info.name === 'Jaqueline' || info.age >= '30') {
+  console.log('ok')
+} else {
+  console.log('nok!!!')
+}
+
+// TERNÁRIOS
+
+//result: false pq não sou a maria
+let qualquercoisa = info.isActive && info.name === 'Maria' ? 'Olha ela tá ativa' : 'Não tá ativa'
+console.log(qualquercoisa);
+
+//se não colocar o break, continua passsando
+const dia = 3
+switch(dia) {
+  case 1:
+    console.log('dia 1')
+    break;
+  case 2:
+    console.log('dia 2')
+    alert('Olá');
+    break;
+  case 3:
+    console.log('dia 3')
+    break;
+  default:
+    console.log('dia4')
+    break;
+}
+
+// FUNÇÕES
+
+function somar(numero1, numero2) {
+  return numero1 + numero2
+}
+console.log(somar(1, 2))
+
+const somar2 = function (numero1, numero2) {
+  return numero1 = numero2
+}
+console.log(somar2(2,3))
+
+const somar3 = (num1, num2) => {
+  return num1 + num2
+}
+console.log(somar(3,5))
+
+const somar4 = (num1, num2) => num1 + num2
+console.log(somar4(3,5))
+
+const alofruta = fruta => console.log(fruta)
+alofruta('abacaxi')
+
+//Crie uma função que recebe por parâmetro a idade e retorne
+//se é maior ou nao
+
+
+const maiorIdade = idade => {
+  return idade >= 18
+}
+console.log(maiorIdade(23));
+
+const maiorIdade2 = idade => idade >= 18
+console.log(maiorIdade2(18))
+
+const maiorIdade3 = idade => idade >= 18 ? 'Maior' : 'Menor'
+console.log(maiorIdade3(18));
+
+const maiorIdade4 = idade => {
+  if(idade >= 18) return 'Maior'
+  return 'Menor'
+}
+console.log(maiorIdade4(20))
+
+// Criar função que de acordo com um numero de 1 a 3,
+// retorne medalha, 1 = ouro, 2 = prata, 3 = bronze
+
+//***************************************************
+// INICIO JEITO ERRADO
+let numeros = [{
+    numero: 1,
+    mensagem: 'Ouro'
+  }, {
+    numero: 2,
+    mensagem: 'Prata'
+  }, {
+    numero: 3,
+    mensagem: 'Bronze'
+  }
+]
+
+const medalha = numero => {
+  for (let index = 0; index < numeros.length; index++) {
+    if (numeros[index].numero === numero)
+      return numeros[index].mensagem;  
+    
+    return 'Não viaja'  
+  }
+}
+console.log(medalha(1))
+// FIM JEITO ERRADO
+//***************************************************
+
+const qualMedalha = num => {
+  let medalhas = ['ouro', 'prata', 'bronze']
+
+  if (num > 3 || num < 0) {
+    return 'Não viaja'
+  }
+
+  return medalhas[num-1];
+}
+console.log(qualMedalha(1))
+
+const qualMedalha2 = num => {
+  let medalhas = ['não viaja', 'ouro', 'prata', 'bronze']
+
+  return (num > 4 || num < 1) ? 'Não viaja' : medalhas[num]
+}
+console.log(qualMedalha2(2))
+
+const qualMedalha3 = num => {
+  let medalhas = {
+    1: 'ouro',
+    2: 'prata',
+    3: 'bronze'
+  }
+
+  return (num > 3 || num < 0 ? 'Não viaja' : medalhas[num])
+}
+console.log(qualMedalha3)
+
+//let contador
+for(let contador = 0; contador < 10; contador++){
+  console.log(contador)
+}
+
+
+let linguagens = ['Js', 'CSS', 'HTML']
+
+for(let index = 0; index < linguagens.length; index++) {
+  console.log(linguagens[index])
+}
+
+let i = 0
+while (i < linguagens.length) {
+    console.log(linguagens[i])
+    i++;
+}
+
+//Criar função com arrow function que recebe uma 
+//lista de números, printa os pares e usa o for
+let numeros = [
+  1, 2, 3, 4, 5, 6, 7, 8
+]
+
+const retornaPares = numeros => {
+  for (let i = 0; i < numeros.length; i++) {
+    if (numeros[i] % 2 === 0)
+      console.log(numeros[i])
+  }  
+}
+
+retornaPares(numeros)
+
+// Sem usar if:
+const retornaParesSemIf = numeros => {
+  for(let i = 0; i <= 10; i+=2) {
+    console.log(i);
+  }
+}
+
+retornaParesSemIf(numeros)
+
