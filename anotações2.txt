@@ -1,0 +1,127 @@
+import "./styles.css";
+
+document.getElementById("app").innerHTML = `
+<h1>Hello Vanilla!</h1>
+<div>
+  We use Parcel to bundle this sandbox, you can find more info about Parcel
+  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
+</div>
+`;
+
+
+//Crie uma função que recebe por parâmetro a idade e retorne
+//se é maior ou nao
+
+const maiorIdade = idade => {
+  return idade >= 18
+}
+console.log(maiorIdade(23));
+
+const maiorIdade2 = idade => idade >= 18
+console.log(maiorIdade2(18))
+
+const maiorIdade3 = idade => idade >= 18 ? 'Maior' : 'Menor'
+console.log(maiorIdade3(18));
+
+const maiorIdade4 = idade => {
+  if(idade >= 18) return 'Maior'
+  return 'Menor'
+}
+console.log(maiorIdade4(20))
+
+// Criar função que de acordo com um numero de 1 a 3,
+// retorne medalha, 1 = ouro, 2 = prata, 3 = bronze
+
+let numeros = [{
+    numero: 1,
+    mensagem: 'Ouro'
+  }, {
+    numero: 2,
+    mensagem: 'Prata'
+  }, {
+    numero: 3,
+    mensagem: 'Bronze'
+  }
+]
+
+const medalha = numero => {
+  for (let index = 0; index < numeros.length; index++) {
+    if (numeros[index].numero === numero)
+      return numeros[index].mensagem;  
+    
+    return 'Não viaja'  
+  }
+}
+console.log(medalha(1))
+
+const qualMedalha = num => {
+  let medalhas = ['ouro', 'prata', 'bronze']
+
+  if (num > 3 || num < 0) {
+    return 'Não viaja'
+  }
+
+  return medalhas[num-1];
+}
+console.log(qualMedalha(1))
+
+const qualMedalha2 = num => {
+  let medalhas = ['não viaja', 'ouro', 'prata', 'bronze']
+
+  return (num > 4 || num < 1) ? 'Não viaja' : medalhas[num]
+}
+console.log(qualMedalha2(2))
+
+const qualMedalha3 = num => {
+  let medalhas = {
+    1: 'ouro',
+    2: 'prata',
+    3: 'bronze'
+  }
+
+  return (num > 3 || num < 0 ? 'Não viaja' : medalhas[num])
+}
+console.log(qualMedalha3)
+
+//let contador
+for(let contador = 0; contador < 10; contador++){
+  console.log(contador)
+}
+
+
+let linguagens = ['Js', 'CSS', 'HTML']
+
+for(let index = 0; index < linguagens.length; index++) {
+  console.log(linguagens[index])
+}
+
+let i = 0
+while (i < linguagens.length) {
+    console.log(linguagens[i])
+    i++;
+}
+
+//Criar função com arrow function que recebe uma 
+//lista de números, printa os pares e usa o for
+let numeros = [
+  1, 2, 3, 4, 5, 6, 7, 8
+]
+
+const retornaPares = numeros => {
+  for (let i = 0; i < numeros.length; i++) {
+    if (numeros[i] % 2 === 0)
+      console.log(numeros[i])
+  }  
+}
+
+retornaPares(numeros)
+
+// Sem usar if:
+const retornaParesSemIf = numeros => {
+  for(let i = 0; i <= 10; i+=2) {
+    console.log(i);
+  }
+}
+
+retornaParesSemIf(numeros)
+

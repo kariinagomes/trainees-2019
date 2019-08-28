@@ -316,3 +316,24 @@ const retornaParesSemIf = numeros => {
 
 retornaParesSemIf(numeros)
 
+
+
+linguagens.forEach(element => {
+  console.log(element)
+})
+
+// for sempre tem um return; 
+// map já retorna o valorzão concatenado..
+let valores = [10, 20, 55.2]
+const taxa = 4.10
+const cotacao = valores.map(element => `R$ ${element * taxa}`)
+
+console.log(cotacao)
+
+//filter
+//reduce
+//join
+//splice
+
+
+
